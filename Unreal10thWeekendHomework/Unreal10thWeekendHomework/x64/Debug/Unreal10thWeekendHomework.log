@@ -1,0 +1,11 @@
+﻿  Homework03.cpp
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,55): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,55): warning C4305: 'initializing': truncation from 'int' to 'const char'
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,55): warning C4309: 'initializing': truncation of constant value
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,62): warning C4305: 'initializing': truncation from 'int' to 'const char'
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,62): warning C4309: 'initializing': truncation of constant value
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,69): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,69): warning C4305: 'initializing': truncation from 'int' to 'const char'
+C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\Unreal10thWeekendHomework\Homework0523To0525\Homework03.cpp(30,69): warning C4309: 'initializing': truncation of constant value
+  Unreal10thWeekendHomework.vcxproj -> C:\GeunSu\cpp\05_15\weekhw0523-GeunSuYoon\Unreal10thWeekendHomework\x64\Debug\Unreal10thWeekendHomework.exe
