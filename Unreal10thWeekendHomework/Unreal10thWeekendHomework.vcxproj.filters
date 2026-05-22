@@ -18,22 +18,5 @@
     <ClCompile Include="Unreal10thWeekendHomework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Homework0523To0525\Homework02.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Homework0523To0525\Homework03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Homework0523To0525\Homework04.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Homework0523To0525\Homework05.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Homework0523To0525\Homework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

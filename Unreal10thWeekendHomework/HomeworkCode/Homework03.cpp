@@ -64,6 +64,7 @@ void	Homework03_Run(void)
 		{
 			std::cin.clear();
 			std::cin.ignore(10000, '\n');
+			printf("\n");
 			printf("베팅 금액을 설정해주세요.\n베팅 금액은 %d원부터 %d원까지 입니다.\n", MinBettingCost, PlayerCost);
 			std::cin >> BettingCost;
 		}
