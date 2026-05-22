@@ -6,9 +6,9 @@
 enum ESlotSymbol
 {
 	SlotSymbolSeven		= 0,
-	SlotSymbolHeart		= 1,
-	SlotSymbolStar		= 2,
-	SlotSymbolSquare	= 3,
+	SlotSymbolJack		= 1,
+	SlotSymbolQueen		= 2,
+	SlotSymbolKing	= 3,
 };
 // 슬롯 결과 enum.
 enum ESlotMatch
@@ -27,7 +27,7 @@ const int	LuckySeven = 10000;
 // 슬롯 관련 선언부
 // 여길 바꾸면 enum도 바꿔줘야 한다!
 const int	SlotSymbolSize = 4;
-const char	SlotMachineSymbol[SlotSymbolSize] = { '7', '♥', '★', '■' };
+const char	SlotMachineSymbol[SlotSymbolSize] = { '7', 'J', 'Q', 'K' };
 // 슬롯 머신 심볼 개수
 const int	SlotMachineSize = 3;
 
@@ -105,6 +105,7 @@ void	Homework03_Run(void)
 			break;
 		}
 		}
+		BettingCost = 0;
 	}
 }
 
@@ -119,6 +120,11 @@ void	PrintSlotMachine(ESlotSymbol* SlotMachine)
 	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
 	{
 		printf("| [%c] |", SlotMachineSymbol[SlotMachine[SlotMachineCount]]);
+	}
+	printf("\n");
+	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+	{
+		printf("   -   ");
 	}
 	printf("\n");
 	printf("Slot Machine\n");
