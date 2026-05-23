@@ -8,7 +8,7 @@ enum ESlotSymbol
 	SlotSymbolSeven		= 0,
 	SlotSymbolJack		= 1,
 	SlotSymbolQueen		= 2,
-	SlotSymbolKing	= 3,
+	SlotSymbolKing		= 3,
 };
 // 슬롯 결과 enum.
 enum ESlotMatch
@@ -18,10 +18,6 @@ enum ESlotMatch
 	SlotMatchTriple	= 2,	// 베팅 금액 TripleNum배 만큼 얻기
 };
 // 전역 상수 선언부
-// 돈 관련 선언
-//const int	kStartMoney = 10000;
-//const int	kMinBettingMoney = 100;
-//const int	kEndMoney = 100;
 // 베팅 금액 돌려받는 배수
 const int	kTripleNum = 50;
 const int	kLuckySeven = 10000;
@@ -33,6 +29,7 @@ const char	kSlotMachineSymbol[kSlotSymbolSize] = { '7', 'J', 'Q', 'K' };
 const int	kSlotMachineSize = 3;
 
 void		Homework03_Run(void);
+void		PrintSlotInformation(void);
 void		PrintSlotMachine(ESlotSymbol* SlotMachine);
 ESlotMatch	CheckResult(ESlotSymbol* SlotMachine);
 
@@ -45,15 +42,7 @@ void	Homework03_Run(void)
 
 	printf("Homework03_Run\n");
 	// 초기 설정 알려주는 곳
-	printf("슬롯 머신의 슬롯은 %d개입니다.\n", kSlotMachineSize);
-	printf("슬롯 머신의 심볼은 %d개이며 아래와 같습니다.\n", kSlotSymbolSize);
-	for (int SlotSymbolCount = 0; SlotSymbolCount < kSlotSymbolSize; SlotSymbolCount++)
-	{
-		if (SlotSymbolCount)
-			printf(", ");
-		printf("[%c]", kSlotMachineSymbol[SlotSymbolCount]);
-	}
-	printf("\n");
+	PrintSlotInformation();
 	PrintSlotMachine(SlotMachine);
 	while (PlayerMoney >= kEndMoney)
 	{
@@ -101,6 +90,27 @@ void	Homework03_Run(void)
 	}
 	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n", PlayerMoney);
 }
+
+void	PrintSlotInformation(void)
+{
+	printf("슬롯 머신====================================================\n");
+	printf("슬롯 머신의 슬롯은 %d개입니다.\n", kSlotMachineSize);
+	printf("슬롯 머신의 심볼은 %d개이며 아래와 같습니다.\n", kSlotSymbolSize);
+	for (int SlotSymbolCount = 0; SlotSymbolCount < kSlotSymbolSize; SlotSymbolCount++)
+	{
+		if (SlotSymbolCount)
+			printf(", ");
+		printf("[%c]", kSlotMachineSymbol[SlotSymbolCount]);
+	}
+	printf("같은 그림 3개를 뽑으면 베팅 금액의 [%d]배 얻을 수 있습니다.\n", kTripleNum);
+	printf("7을 3개 뽑으면 베팅 금액의 [%d]배 얻을 수 있습니다.\n", kLuckySeven);
+	printf("플레이어의 시작 금액은 [%d]원 입니다.\n", kStartMoney);
+	printf("최소 베팅 금액은 [%d]원 입니다.\n", kMinBettingMoney);
+	printf("소지 금액이 [%d]원 미만이 되면 끝납니다.\n", kEndMoney);
+	printf("도박은 위험합니다...\n");
+	printf("=================================================================\n\n");
+}
+
 
 void	PrintSlotMachine(ESlotSymbol* SlotMachine)
 {
