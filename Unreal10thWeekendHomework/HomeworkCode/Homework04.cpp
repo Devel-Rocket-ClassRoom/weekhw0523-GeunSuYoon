@@ -45,6 +45,7 @@ void	Homework04_Run(void)
 		int	SelectedCard = ChoiceCard();
 		printf("딜러의 카드는 아래와 같습니다.\n");
 		PrintCharArray(DealerCard, kDealerGetCard + 1);
+		printf("============================================================\n");
 		if (DealerCard[SelectedCard] != kJocker)
 		{
 			printf("도둑을 못찾았습니다...\n");
@@ -76,6 +77,10 @@ void	Homework04_Run(void)
 					printf("플레이어 소지금이 부족합니다.\n");
 					printf("다음 게임을 시작하겠습니다.\n");
 					BettingMoney = 0;
+				}
+				else
+				{
+					PlayerMoney -= BettingMoney;
 				}
 			}
 		}
