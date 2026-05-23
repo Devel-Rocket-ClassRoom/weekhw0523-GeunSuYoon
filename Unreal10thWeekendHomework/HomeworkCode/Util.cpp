@@ -12,6 +12,7 @@ void	PrintIntArray(int* Array, int ArrayLength)
 			printf(", ");
 		printf("[%d]", Array[ArrCount]);
 	}
+	printf("\n");
 }
 
 void	PrintCharArray(char* Array, int ArrayLength)
@@ -22,6 +23,7 @@ void	PrintCharArray(char* Array, int ArrayLength)
 			printf(", ");
 		printf("[%c]", Array[ArrCount]);
 	}
+	printf("\n");
 }
 
 void	DoBetting(int& BettingMoney, int &PlayerMoney)
