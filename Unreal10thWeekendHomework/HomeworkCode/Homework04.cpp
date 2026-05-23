@@ -10,6 +10,7 @@ const int	kDealerGetCard = 2;
 const int	kOldMaid = 2;
 
 void	Homework04_Run(void);
+void	PrintOldMaidInformation(void);
 void	InitCardDeck(char* CardDeck);
 void	DealerSelectCard(char* CardDeck, char* DealerCard);
 void	FisherYatesShuffleChar(char* Array, int Length);
@@ -22,14 +23,9 @@ void	Homework04_Run(void)
 	char	CardDeck[kCardDeckSize] = { 0, };
 	char	DealerCard[kDealerGetCard + 1] = { 0, };
 
-	InitCardDeck(CardDeck);
 	printf("Homework04_Run\n");
-	printf("=====게임 규칙 설명=========================================\n");
-	printf("카드의 개수는 %d개 입니다.\n", kCardDeckSize + 1);
-	printf("딜러는 %d개의 카드를 뽑은 뒤, 조커를 포함해 총 %d개의 카드를 가집니다.\n", kDealerGetCard, kDealerGetCard + 1);
-	printf("조커를 찾으시면 베팅 금액의 %d배를 획득하실 수 있습니다.\n", kOldMaid);
-	printf("찾지 못했다면 다음 게임을 진행하거나.\n");
-	printf("베팅 금액의 2배를 지불해 게임을 진행할 수 있습니다.\n");
+	InitCardDeck(CardDeck);
+	PrintOldMaidInformation();
 	while (PlayerMoney >= kEndMoney)
 	{
 		printf("\n============================================================\n");
@@ -92,6 +88,18 @@ void	Homework04_Run(void)
 		}
 	}
 	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n", PlayerMoney);
+}
+
+void	PrintOldMaidInformation(void)
+{
+	printf("게임 규칙 설명=========================================\n");
+	printf("카드의 개수는 %d개 입니다.\n", kCardDeckSize + 1);
+	printf("딜러는 %d개의 카드를 뽑은 뒤, 조커를 포함해 총 %d개의 카드를 가집니다.\n", kDealerGetCard, kDealerGetCard + 1);
+	printf("조커를 찾으시면 베팅 금액의 %d배를 획득하실 수 있습니다.\n", kOldMaid);
+	printf("찾지 못했다면 다음 게임을 진행하거나.\n");
+	printf("베팅 금액의 2배를 지불해 게임을 진행할 수 있습니다.\n");
+	printf("도박은 위험합니다...\n");
+	printf("=====================================================\n");
 }
 
 // 최초 카드덱 설정 함수
