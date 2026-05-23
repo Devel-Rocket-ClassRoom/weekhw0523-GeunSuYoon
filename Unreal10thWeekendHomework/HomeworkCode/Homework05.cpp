@@ -197,7 +197,7 @@ const int	kEnemyAttackDamageModular = kEnemyAttackDamageMax - kEnemyAttackDamage
 void					Homework05_Run(void);
 EMazeState				InitMazeSetting(int &PlayerX, int &PlayerY, int &EndX, int &EndY);
 EMazeState				MazeSearchExit(int PosX, int PosY, bool Visited[kMazeRows][kMazeCols]);
-void					PrintInformation(void);
+void					PrintMazeInformation(void);
 void					GameLoop(int& PlayerX, int& PlayerY, int& EndX, int& EndY, int& PlayerHP);
 void					PrintMaze(int PlayerX, int PlayerY, int PlayerHP);
 EPlayerMoveDirection	PlayerMoveInput(int& PlayerX, int& PlayerY, int& PlayerHP);
@@ -223,7 +223,7 @@ void	Homework05_Run(void)
 		return ;
 	}
 	// 게임 시작하기 전 게임 설명
-	PrintInformation();
+	PrintMazeInformation();
 	// 실제 게임 실행부
 	GameLoop(PlayerX, PlayerY, EndX, EndY, PlayerHP);
 	// 종료 후 플레이어 상태 확인
@@ -239,7 +239,7 @@ void	Homework05_Run(void)
 }
 
 // 미로 초기 설정 출력문
-void	PrintInformation(void)
+void	PrintMazeInformation(void)
 {
 	printf("미로를 탈출하셔야 합니다.====================================================\n");
 	printf("미로 정보\n");
