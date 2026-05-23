@@ -17,7 +17,7 @@ enum ESlotMatch
 	SlotMatchSeven	= 1,	// 베팅 금액 LuckySeven배 만큼 얻기
 	SlotMatchTriple	= 2,	// 베팅 금액 TripleNum배 만큼 얻기
 };
-// 전역변수 선언부
+// 전역 상수 선언부
 // 돈 관련 선언
 //const int	StartMoney = 10000;
 //const int	MinBettingMoney = 100;

@@ -1,6 +1,6 @@
 ﻿#include "./Homework.h"
 
-// 전역변수 선언부
+// 전역 상수 선언부
 // 카드 관련 선언
 const int	ConstCardDeckSize = 13;
 const char	ConstCardDeck[ConstCardDeckSize] = { 'A', '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9' , '10' , 'J' , 'Q' , 'K' };
