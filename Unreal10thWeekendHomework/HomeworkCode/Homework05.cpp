@@ -230,11 +230,11 @@ void	Homework05_Run(void)
 	if (PlayerHP)
 	{
 		PrintMaze(PlayerX, PlayerY, PlayerHP);
-		printf("미로를 탈출하셨습니다!\n");
+		printf("미로를 탈출하셨습니다!\n\n");
 	}
 	else
 	{
-		printf("사망하셨습니다...\n");
+		printf("사망하셨습니다...\n\n");
 	}
 }
 

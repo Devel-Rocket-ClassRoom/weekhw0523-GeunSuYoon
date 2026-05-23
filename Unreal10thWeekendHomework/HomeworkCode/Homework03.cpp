@@ -88,7 +88,7 @@ void	Homework03_Run(void)
 		}
 		BettingMoney = 0;
 	}
-	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n", PlayerMoney);
+	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n\n", PlayerMoney);
 }
 
 void	PrintSlotInformation(void)
