@@ -15,5 +15,5 @@ void	Homework02_Run(void)
 		SumValue += InputVal % 10;
 		InputVal /= 10;
 	}
-	printf("입력한 값의 자릿수 합은 [%d]입니다.\n", SumValue);
+	printf("입력한 값의 자릿수 합은 [%d]입니다.\n\n", SumValue);
 }
