@@ -1,7 +1,7 @@
 ﻿#include "./Homework.h"
 
 // enum 선언부
-// const char	SlotMachineSymbol 과 연결되는 enum.
+// const char	kSlotMachineSymbol 과 연결되는 enum.
 // 한 쪽을 바꿔주면 여기도 바꿔줘야 한다!
 enum ESlotSymbol
 {
@@ -19,18 +19,18 @@ enum ESlotMatch
 };
 // 전역 상수 선언부
 // 돈 관련 선언
-//const int	StartMoney = 10000;
-//const int	MinBettingMoney = 100;
-//const int	EndMoney = 100;
+//const int	kStartMoney = 10000;
+//const int	kMinBettingMoney = 100;
+//const int	kEndMoney = 100;
 // 베팅 금액 돌려받는 배수
-const int	TripleNum = 50;
-const int	LuckySeven = 10000;
+const int	kTripleNum = 50;
+const int	kLuckySeven = 10000;
 // 슬롯 관련 선언부
 // 여길 바꾸면 enum도 바꿔줘야 한다!
-const int	SlotSymbolSize = 4;
-const char	SlotMachineSymbol[SlotSymbolSize] = { '7', 'J', 'Q', 'K' };
+const int	kSlotSymbolSize = 4;
+const char	kSlotMachineSymbol[kSlotSymbolSize] = { '7', 'J', 'Q', 'K' };
 // 슬롯 머신 심볼 개수
-const int	SlotMachineSize = 3;
+const int	kSlotMachineSize = 3;
 
 void		Homework03_Run(void);
 void		PrintSlotMachine(ESlotSymbol* SlotMachine);
@@ -39,30 +39,30 @@ ESlotMatch	CheckResult(ESlotSymbol* SlotMachine);
 void	Homework03_Run(void)
 {
 	// 사용할 변수 선언부
-	int			PlayerMoney = StartMoney;
+	int			PlayerMoney = kStartMoney;
 	int			BettingMoney = 0;
-	ESlotSymbol	SlotMachine[SlotMachineSize] = { SlotSymbolSeven, SlotSymbolSeven, SlotSymbolSeven };
+	ESlotSymbol	SlotMachine[kSlotMachineSize] = { SlotSymbolSeven, SlotSymbolSeven, SlotSymbolSeven };
 
 	printf("Homework03_Run\n");
 	// 초기 설정 알려주는 곳
-	printf("슬롯 머신의 슬롯은 %d개입니다.\n", SlotMachineSize);
-	printf("슬롯 머신의 심볼은 %d개이며 아래와 같습니다.\n", SlotSymbolSize);
-	for (int SlotSymbolCount = 0; SlotSymbolCount < SlotSymbolSize; SlotSymbolCount++)
+	printf("슬롯 머신의 슬롯은 %d개입니다.\n", kSlotMachineSize);
+	printf("슬롯 머신의 심볼은 %d개이며 아래와 같습니다.\n", kSlotSymbolSize);
+	for (int SlotSymbolCount = 0; SlotSymbolCount < kSlotSymbolSize; SlotSymbolCount++)
 	{
 		if (SlotSymbolCount)
 			printf(", ");
-		printf("[%c]", SlotMachineSymbol[SlotSymbolCount]);
+		printf("[%c]", kSlotMachineSymbol[SlotSymbolCount]);
 	}
 	printf("\n");
 	PrintSlotMachine(SlotMachine);
-	while (PlayerMoney >= EndMoney)
+	while (PlayerMoney >= kEndMoney)
 	{
 		// 베팅하기. 함수는 util.cpp에 정의했다.
 		DoBetting(BettingMoney, PlayerMoney);
 		// 슬롯 머신 결과 출력
-		for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+		for (int SlotMachineCount = 0; SlotMachineCount < kSlotMachineSize; SlotMachineCount++)
 		{
-			int	SlotResult = rand() % SlotSymbolSize;
+			int	SlotResult = rand() % kSlotSymbolSize;
 
 			SlotMachine[SlotMachineCount] = static_cast<ESlotSymbol>(SlotResult);
 		}
@@ -79,16 +79,16 @@ void	Homework03_Run(void)
 		case (SlotMatchTriple):
 		{
 			printf("Triple!!!\n");
-			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!\n\n", BettingMoney, TripleNum, BettingMoney * TripleNum);
-			PlayerMoney += BettingMoney * TripleNum;
+			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!\n\n", BettingMoney, kTripleNum, BettingMoney * kTripleNum);
+			PlayerMoney += BettingMoney * kTripleNum;
 			break;
 		}
 		case (SlotMatchSeven):
 		{
 			printf("★☆★☆★☆★☆Lucky Seven!!!★☆★☆★☆★☆\n");
-			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!!!\n", BettingMoney, LuckySeven, BettingMoney * LuckySeven);
+			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!!!\n", BettingMoney, kLuckySeven, BettingMoney * kLuckySeven);
 			printf("★☆★☆★☆★☆Lucky Seven!!!★☆★☆★☆★☆\n\n");
-			PlayerMoney += BettingMoney * LuckySeven;
+			PlayerMoney += BettingMoney * kLuckySeven;
 			break;
 		}
 		default:
@@ -105,17 +105,17 @@ void	Homework03_Run(void)
 void	PrintSlotMachine(ESlotSymbol* SlotMachine)
 {
 	printf("Slot Machine\n");
-	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+	for (int SlotMachineCount = 0; SlotMachineCount < kSlotMachineSize; SlotMachineCount++)
 	{
 		printf("   -   ");
 	}
 	printf("\n");
-	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+	for (int SlotMachineCount = 0; SlotMachineCount < kSlotMachineSize; SlotMachineCount++)
 	{
-		printf("| [%c] |", SlotMachineSymbol[SlotMachine[SlotMachineCount]]);
+		printf("| [%c] |", kSlotMachineSymbol[SlotMachine[SlotMachineCount]]);
 	}
 	printf("\n");
-	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+	for (int SlotMachineCount = 0; SlotMachineCount < kSlotMachineSize; SlotMachineCount++)
 	{
 		printf("   -   ");
 	}
@@ -127,7 +127,7 @@ ESlotMatch	CheckResult(ESlotSymbol* SlotMachine)
 {
 	ESlotSymbol	CheckSlot = SlotMachine[0];
 
-	for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
+	for (int SlotMachineCount = 0; SlotMachineCount < kSlotMachineSize; SlotMachineCount++)
 	{
 		if (CheckSlot != SlotMachine[SlotMachineCount])
 			return (SlotMatchFail);
