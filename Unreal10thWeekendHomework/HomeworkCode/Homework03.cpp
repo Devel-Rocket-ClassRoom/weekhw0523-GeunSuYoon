@@ -102,6 +102,7 @@ void	PrintSlotInformation(void)
 			printf(", ");
 		printf("[%c]", kSlotMachineSymbol[SlotSymbolCount]);
 	}
+	printf("\n");
 	printf("같은 그림 3개를 뽑으면 베팅 금액의 [%d]배 얻을 수 있습니다.\n", kTripleNum);
 	printf("7을 3개 뽑으면 베팅 금액의 [%d]배 얻을 수 있습니다.\n", kLuckySeven);
 	printf("플레이어의 시작 금액은 [%d]원 입니다.\n", kStartMoney);
