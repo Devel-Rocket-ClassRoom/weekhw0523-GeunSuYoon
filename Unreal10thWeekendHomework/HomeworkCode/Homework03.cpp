@@ -1,4 +1,4 @@
-#include "./Homework.h"
+﻿#include "./Homework.h"
 
 // enum 선언부
 // const char	SlotMachineSymbol 과 연결되는 enum.
@@ -18,9 +18,10 @@ enum ESlotMatch
 	SlotMatchTriple	= 2,	// 베팅 금액 TripleNum배 만큼 얻기
 };
 // 전역변수 선언부
-const int	StartCost = 10000;
-const int	MinBettingCost = 100;
-const int	EndCost = 100;
+// 돈 관련 선언
+//const int	StartMoney = 10000;
+//const int	MinBettingMoney = 100;
+//const int	EndMoney = 100;
 // 베팅 금액 돌려받는 배수
 const int	TripleNum = 50;
 const int	LuckySeven = 10000;
@@ -38,8 +39,8 @@ ESlotMatch	CheckResult(ESlotSymbol* SlotMachine);
 void	Homework03_Run(void)
 {
 	// 사용할 변수 선언부
-	int			PlayerCost = StartCost;
-	int			BettingCost = 0;
+	int			PlayerMoney = StartMoney;
+	int			BettingMoney = 0;
 	ESlotSymbol	SlotMachine[SlotMachineSize] = { SlotSymbolSeven, SlotSymbolSeven, SlotSymbolSeven };
 
 	printf("Homework03_Run\n");
@@ -54,22 +55,10 @@ void	Homework03_Run(void)
 	}
 	printf("\n");
 	PrintSlotMachine(SlotMachine);
-	while (PlayerCost >= EndCost)
+	while (PlayerMoney >= EndMoney)
 	{
-		// 플레이어의 소지금액 알려주고, 최소 베팅 금액 ~ 플레이어 소지금액 사이로 베팅하도록 한다.
-		printf("현재 플레이어의 소지금액은 %d원 입니다.\n", PlayerCost);
-		printf("베팅 금액을 설정해주세요.\n베팅 금액은 %d원부터 %d원까지 입니다.\n", MinBettingCost, PlayerCost);
-		std::cin >> BettingCost;
-		while (BettingCost < 100 || BettingCost > PlayerCost)
-		{
-			std::cin.clear();
-			std::cin.ignore(10000, '\n');
-			printf("\n");
-			printf("베팅 금액을 설정해주세요.\n베팅 금액은 %d원부터 %d원까지 입니다.\n", MinBettingCost, PlayerCost);
-			std::cin >> BettingCost;
-		}
-		// 플레이어의 자산에서 베팅 금액을 뺀다.
-		PlayerCost -= BettingCost;
+		// 베팅하기. 함수는 util.cpp에 정의했다.
+		DoBetting(BettingMoney, PlayerMoney);
 		// 슬롯 머신 결과 출력
 		for (int SlotMachineCount = 0; SlotMachineCount < SlotMachineSize; SlotMachineCount++)
 		{
@@ -90,16 +79,16 @@ void	Homework03_Run(void)
 		case (SlotMatchTriple):
 		{
 			printf("Triple!!!\n");
-			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!\n\n", BettingCost, TripleNum, BettingCost * TripleNum);
-			PlayerCost += BettingCost * TripleNum;
+			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!\n\n", BettingMoney, TripleNum, BettingMoney * TripleNum);
+			PlayerMoney += BettingMoney * TripleNum;
 			break;
 		}
 		case (SlotMatchSeven):
 		{
 			printf("★☆★☆★☆★☆Lucky Seven!!!★☆★☆★☆★☆\n");
-			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!!!\n", BettingCost, LuckySeven, BettingCost * LuckySeven);
+			printf("베팅 금액 %d원의 %d배인 %d원을 얻었습니다!!!\n", BettingMoney, LuckySeven, BettingMoney * LuckySeven);
 			printf("★☆★☆★☆★☆Lucky Seven!!!★☆★☆★☆★☆\n\n");
-			PlayerCost += BettingCost * LuckySeven;
+			PlayerMoney += BettingMoney * LuckySeven;
 			break;
 		}
 		default:
@@ -108,9 +97,9 @@ void	Homework03_Run(void)
 			break;
 		}
 		}
-		BettingCost = 0;
+		BettingMoney = 0;
 	}
-	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n", PlayerCost);
+	printf("소지 금액이 %d원 입니다.\n파산했습니다...\n", PlayerMoney);
 }
 
 void	PrintSlotMachine(ESlotSymbol* SlotMachine)

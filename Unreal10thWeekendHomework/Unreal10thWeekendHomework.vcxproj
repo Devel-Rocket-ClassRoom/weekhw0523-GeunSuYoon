@@ -123,7 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HomeworkCode\Homework02.cpp" />
+    <ClCompile Include="HomeworkCode\Homework03.cpp" />
+    <ClCompile Include="HomeworkCode\Homework04.cpp" />
+    <ClCompile Include="HomeworkCode\Homework05.cpp" />
+    <ClCompile Include="HomeworkCode\Util.cpp" />
     <ClCompile Include="Unreal10thWeekendHomework.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HomeworkCode\Homework.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
